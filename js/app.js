@@ -3,7 +3,6 @@ const searchForm = document.getElementById('searchForm');
 const searchInput = document.getElementById('searchInput');
 const notFoundMess = document.getElementById('notFoundMess');
 const location = document.getElementById('location');
-const country = document.getElementById('country');
 const temperature = document.getElementById('temperature');
 function getWeather(url) {
     fetch(url)
@@ -30,6 +29,5 @@ searchForm.addEventListener('submit', (e) => {
 });
 function showWeatherUi(data) {
     location.textContent = data.name;
-    country.textContent = data.sys.country;
     temperature.textContent = `${Math.round(data.main.temp - 273.15)}°C`;
 }
